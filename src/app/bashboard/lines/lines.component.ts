@@ -1,56 +1,84 @@
-import { Component, OnInit } from '@angular/core';
-import {books} from '../../data/data';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-lines',
   templateUrl: './lines.component.html',
   styleUrls: ['./lines.component.scss']
 })
-export class LinesComponent implements OnInit {
-  books = books;
+export class LinesComponent implements OnInit, OnDestroy {
   lineChartOptions: any;
-
-  constructor() {}
+  data: { time: number; value: number }[] = [];
+  intervalId: any;
 
   ngOnInit(): void {
-    this.initializeChart();
+    // Genera un registro inicial inmediatamente
+    this.simulateInitialData();
+
+    // Luego comienza el intervalo de simulación
+    this.simulateData();
+  }
+  simulateInitialData() {
+    // Genera un valor aleatorio inicial
+    const now = Date.now();
+    const value = Math.floor(Math.random() * (12000 - 4000 + 1)) + 4000;
+    this.data.push({ time: now, value });
+
+    // Llama a la actualización del gráfico con el valor inicial
+    this.updateChart();
   }
 
-  initializeChart() {
-    const booksByYear = this.getBooksByYear();
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
+  }
+
+  simulateData() {
+    // Ejecuta este bloque cada 5 segundos
+    this.intervalId = setInterval(() => {
+      const now = Date.now(); // Obtiene el tiempo actual en milisegundos
+
+      // Genera un valor aleatorio entre 4000 y 12000
+      const value = Math.floor(Math.random() * (12000 - 4000 + 1)) + 4000;
+
+      // Agrega el nuevo registro con tiempo y valor
+      this.data.push({ time: now, value });
+
+      // Calcula el límite de 2 horas atrás
+      const twoHoursAgo = now - 2 * 60 * 60 * 1000;
+
+      // Elimina los registros que tengan más de 2 horas de antigüedad
+      this.data = this.data.filter(d => d.time >= twoHoursAgo);
+
+      // Actualiza el gráfico con los datos filtrados
+      this.updateChart();
+    }, 5000);
+  }
+
+
+  updateChart() {
+    // Calcular el total de registros
+    const totalRegistros = this.data.reduce((total, current) => total + current.value, 0);
 
     this.lineChartOptions = {
-      title: { text: 'Control de Registros de Libros' },
-      tooltip: {},
+      title: {
+        text: 'Control de Registros de Libros',
+        subtext: `Data Amount = ${totalRegistros}`  // Agregar el total de registros al subtítulo
+      },
+      tooltip: { trigger: 'axis' },
       xAxis: {
         type: 'category',
-        data: Object.keys(booksByYear)  // Los años serán los datos del eje X
+        data: this.data.map(d => new Date(d.time).toLocaleTimeString())
       },
       yAxis: { type: 'value' },
       series: [{
-        name: 'Libros Registrados',
+        name: 'Registros',
         type: 'line',
-        data: Object.values(booksByYear), // Los valores de libros por año serán los datos de la línea
-        smooth: true,  // Hace la línea más suave
-        itemStyle: { color: '#007bff' }, // Color de la línea
-        lineStyle: { width: 2 },  // Estilo de la línea
-        areaStyle: {
-          color: 'rgba(0, 123, 255, 0.3)' // Color y opacidad del sombreado debajo de la línea
-        }
+        data: this.data.map(d => d.value),
+        smooth: true,
+        itemStyle: { color: '#007bff' },
+        lineStyle: { width: 2 },
+        areaStyle: { color: 'rgba(0, 123, 255, 0.3)' }
       }]
     };
   }
 
-  getBooksByYear() {
-    const booksByYear = {};
-    this.books.forEach(book => {
-      const year = book.year.toString();
-      if (booksByYear[year]) {
-        booksByYear[year]++;
-      } else {
-        booksByYear[year] = 1;
-      }
-    });
-    return booksByYear;
-  }
 }

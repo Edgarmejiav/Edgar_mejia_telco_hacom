@@ -15,8 +15,11 @@ export class PieChartGenreComponent implements OnInit {
   }
 
   getPieChartOptionsGenre() {
-    const genreCount = this.getBooksByGenre();
+    const male = this.books.filter(b => b.gender === 'Male').length;
+    const female = this.books.filter(b => b.gender === 'Female').length;
     return {
+      title: { text: 'Genero Autores' },
+
       tooltip: {
         trigger: 'item'
       },
@@ -26,32 +29,27 @@ export class PieChartGenreComponent implements OnInit {
       },
       series: [
         {
-          name: 'Género',
           type: 'pie',
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,
           label: {
-            show: true, // Habilita las etiquetas
-            position: 'outside', // Muestra las etiquetas fuera del gráfico
-            formatter: '{b}: {c} ({d}%)' // Formato de las etiquetas
+            show: true, // Habilita la etiqueta
+            position: 'inside', // Muestra las etiquetas fuera del gráfico
           },
           emphasis: {
             label: {
               show: true,
-              fontSize: 40,
+              fontSize: 10,
               fontWeight: 'bold'
             }
           },
           labelLine: {
             show: true // Muestra la línea que conecta la etiqueta con la sección
           },
-          data: Object.keys(genreCount).map((genre, index) => ({
-            value: genreCount[genre],
-            name: genre,
-            itemStyle: {
-              color: 'hsl(' + (index * 200 / Object.keys(genreCount).length) + ', 70%, 50%)' // Color dinámico
-            }
-          }))
+          data: [
+            { value: male, name: 'Hombres', itemStyle: { color: '#4caf50' } }, // Color verde para publicados
+            { value: female, name: 'Mujeres', itemStyle: { color: '#f44336' } } // Color rojo para no publicados
+          ]
         }
       ]
     };

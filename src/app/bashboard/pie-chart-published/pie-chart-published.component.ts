@@ -19,6 +19,8 @@ export class PieChartPublishedComponent implements OnInit {
     const notPublished = this.books.filter(b => !b.published).length;
 
     return {
+      title: { text: 'Publicaciones' },
+
       tooltip: {
         trigger: 'item'
       },
@@ -28,19 +30,17 @@ export class PieChartPublishedComponent implements OnInit {
       },
       series: [
         {
-          name: 'Publicación',
           type: 'pie',
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,
           label: {
             show: true, // Habilita la etiqueta
-            position: 'outside', // Muestra las etiquetas fuera del gráfico
-            formatter: '{b}: {c} ({d}%)' // Formato: Nombre, valor, porcentaje
+            position: 'inside', // Muestra las etiquetas fuera del gráfico
           },
           emphasis: {
             label: {
               show: true,
-              fontSize: 40,
+              fontSize: 10,
               fontWeight: 'bold'
             }
           },
