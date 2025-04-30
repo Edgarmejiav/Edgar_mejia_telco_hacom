@@ -1,0 +1,52 @@
+/* Sidebar */
+.sidebar {
+  background: red;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  z-index: 1050;
+  transition: transform 0.3s ease;
+  padding-top: 20px;
+}
+
+/* Cuando el Sidebar está activo (visible) */
+.sidebar.active {
+  transform: translateX(0);
+}
+
+/* Estilo de la barra lateral cuando está oculta */
+.sidebar:not(.active) {
+  transform: translateX(-100%);
+}
+
+/* Contenido principal */
+main {
+  margin-left: 450px;
+  width: 100%;
+  transition: margin-left 0.3s ease;
+  margin-top: 50px;
+}
+
+/* Responsividad: Cuando el menú se colapsa, el contenido principal ajusta el margen */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
+/* Asegura que el header se quede fijo en la parte superior */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.container-fluid {
+  margin-top: 60px; /* Ajusta para que no se superponga con el navbar */
+}
