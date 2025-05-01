@@ -112,6 +112,10 @@ http://localhost:4200/
 
 
 ### Capturas de la Aplicación
-![img_2.png](img_2.png)
-![img.png](img.png)
-![img_3.png](img_3.png)
+![img_2](https://github.com/user-attachments/assets/81c02c66-5227-4865-b348-237389553da7)
+
+![img_3](https://github.com/user-attachments/assets/7635269d-05df-4873-99ff-334594da17b6)
+
+![img](https://github.com/user-attachments/assets/ca3cf14c-462e-45d3-99d5-c839716308cc)
+
+
