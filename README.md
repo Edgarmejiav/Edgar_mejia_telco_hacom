@@ -110,5 +110,8 @@ http://localhost:4200/
 
    Esto ejecutará tanto el frontend como el backend usando **concurrently**.
 
-```
 
+### Capturas de la Aplicación
+![img_2.png](img_2.png)
+![img.png](img.png)
+![img_3.png](img_3.png)
