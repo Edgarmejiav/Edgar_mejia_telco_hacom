@@ -26,7 +26,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {ModalAuthorComponent} from './author/modal-author/modal-author.component';
-import {ValidateDateDirective} from './validate-date.directive';
+import {ValidateDateDirective} from './directives/validate-date.directive';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {HttpErrorInterceptor} from './interceptor/http-error.interceptor';
 
