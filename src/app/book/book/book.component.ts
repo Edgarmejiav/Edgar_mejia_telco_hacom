@@ -65,12 +65,25 @@ export class BookComponent implements OnInit {
 
 
   openDialog(): void {
-    this.dialog.open(ModalBookComponent, {
+    this.openBookDialog().subscribe(() => this.loadBooks(0, this.pageSize));
+  }
+
+  editBook(book: Book): void {
+    this.openBookDialog(book).subscribe(() => this.loadBooks(0, this.pageSize));
+  }
+
+  private openBookDialog(book?: Book) {
+    const dialogRef = this.dialog.open(ModalBookComponent, {
       width: '500px',
       height: 'auto',
-      panelClass: 'custom-modal'
+      panelClass: 'custom-modal',
+      data: book ? { book } : undefined
     });
+
+    return dialogRef.afterClosed();
   }
+
+
 
   deleteBook(book: Book): void {
     this.bookService.deleteBook(book.id).subscribe(() => {

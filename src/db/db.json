@@ -4,10 +4,9 @@
       "id": 12,
       "title": "Eva Luna",
       "description": "A novel about the life of a woman in Latin America.",
+      "authorId": 3,
       "year": 1987,
-      "authorId": 2,
-      "published": false,
-      "registrationDate": "2025-04-30T00:00:00"
+      "published": true
     },
     {
       "id": 13,

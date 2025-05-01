@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Agregar Nuevo Libro</h2>
+<h2 mat-dialog-title>{{ data?.book ? 'Editar Nuevo Libro' : 'Agregar Nuevo Libro' }}</h2>
 
 <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <mat-form-field  class="w-100">
