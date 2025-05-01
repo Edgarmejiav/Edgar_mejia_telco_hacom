@@ -1,0 +1,391 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "One Hundred Years of Solitude",
+      "description": "A novel about the Buendía family in Macondo.",
+      "year": 1967,
+      "authorId": 1,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 2,
+      "title": "The House of the Spirits",
+      "description": "A family saga filled with magical realism.",
+      "year": 1982,
+      "authorId": 2,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 3,
+      "title": "Fictions",
+      "description": "A collection of philosophical and fantastic short stories.",
+      "year": 1944,
+      "authorId": 3,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 4,
+      "title": "Like Water for Chocolate",
+      "description": "A love and cooking novel during the revolution.",
+      "year": 1989,
+      "authorId": 4,
+      "published": false,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 5,
+      "title": "The Feast of the Goat",
+      "description": "A political story set in the Dominican Republic.",
+      "year": 2000,
+      "authorId": 5,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 6,
+      "title": "The Old Man and the Sea",
+      "description": "A short novel about an old fisherman.",
+      "year": 1952,
+      "authorId": 1,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 7,
+      "title": "The Alchemist",
+      "description": "A novel about following your dreams.",
+      "year": 1988,
+      "authorId": 2,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 8,
+      "title": "The Book of Imaginary Beings",
+      "description": "A collection of imaginary creatures.",
+      "year": 1957,
+      "authorId": 3,
+      "published": false,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 9,
+      "title": "Like Water for Chocolate",
+      "description": "A love and cooking novel during the revolution.",
+      "year": 1989,
+      "authorId": 4,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 10,
+      "title": "The Time of the Hero",
+      "description": "A novel about the lives of young soldiers.",
+      "year": 1963,
+      "authorId": 5,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 11,
+      "title": "Chronicle of a Death Foretold",
+      "description": "A story of a murder foretold.",
+      "year": 1981,
+      "authorId": 1,
+      "published": true,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 12,
+      "title": "Eva Luna",
+      "description": "A novel about the life of a woman in Latin America.",
+      "year": 1987,
+      "authorId": 2,
+      "published": false,
+      "registrationDate": "2025-04-30T00:00:00"
+    },
+    {
+      "id": 13,
+      "title": "Labyrinths",
+      "description": "A collection of Borges’ stories and essays.",
+      "year": 1962,
+      "authorId": 3,
+      "published": true,
+      "registrationDate": "2025-04-30T10:00:00"
+    },
+    {
+      "id": 14,
+      "title": "The Invention of Morel",
+      "description": "A science fiction novel about an invented world.",
+      "year": 1940,
+      "authorId": 4,
+      "published": true,
+      "registrationDate": "2025-04-30T10:10:00"
+    },
+    {
+      "id": 15,
+      "title": "The General in His Labyrinth",
+      "description": "A historical novel about Simón Bolívar.",
+      "year": 1989,
+      "authorId": 5,
+      "published": true,
+      "registrationDate": "2025-04-30T10:20:00"
+    },
+    {
+      "id": 16,
+      "title": "Love in the Time of Cholera",
+      "description": "A love story spanning decades.",
+      "year": 1985,
+      "authorId": 1,
+      "published": true,
+      "registrationDate": "2025-04-30T10:30:00"
+    },
+    {
+      "id": 17,
+      "title": "The Distant Marvels",
+      "description": "A novel about a woman in the Cuban Revolution.",
+      "year": 2015,
+      "authorId": 2,
+      "published": false,
+      "registrationDate": "2025-04-30T10:40:00"
+    },
+    {
+      "id": 18,
+      "title": "The Aleph",
+      "description": "A story collection by Borges.",
+      "year": 1949,
+      "authorId": 3,
+      "published": true,
+      "registrationDate": "2025-04-30T10:50:00"
+    },
+    {
+      "id": 19,
+      "title": "The Stories of Eva Luna",
+      "description": "A collection of short stories about a woman’s life.",
+      "year": 1990,
+      "authorId": 4,
+      "published": true,
+      "registrationDate": "2025-04-30T11:00:00"
+    },
+    {
+      "id": 20,
+      "title": "Death of a Salesman",
+      "description": "A play about a struggling salesman.",
+      "year": 1949,
+      "authorId": 5,
+      "published": false,
+      "registrationDate": "2025-04-30T11:10:00"
+    },
+    {
+      "id": 21,
+      "title": "asdas",
+      "description": "asdasdas",
+      "year": 2222,
+      "authorId": 1,
+      "published": false,
+      "registrationDate": "2025-05-01T19:32:54.555Z"
+    },
+    {
+      "id": 22,
+      "title": "sad",
+      "description": "asd",
+      "year": 34,
+      "authorId": 2,
+      "published": false,
+      "registrationDate": "2025-05-01T19:34:57.273Z"
+    },
+    {
+      "id": 23,
+      "title": "asd",
+      "description": "asd",
+      "year": 2323,
+      "authorId": 2,
+      "published": true,
+      "registrationDate": "2025-05-01T19:36:44.930Z"
+    },
+    {
+      "id": 24,
+      "title": "asd",
+      "description": "asd",
+      "year": 11111,
+      "authorId": 1,
+      "published": true,
+      "registrationDate": "2025-05-01T19:39:00.637Z"
+    },
+    {
+      "id": 25,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:40:13.303Z"
+    },
+    {
+      "id": 26,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:40:16.525Z"
+    },
+    {
+      "id": 27,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:40:30.416Z"
+    },
+    {
+      "id": 28,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:40:50.484Z"
+    },
+    {
+      "id": 29,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:40:53.349Z"
+    },
+    {
+      "id": 30,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 31,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 32,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 33,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 34,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 35,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 36,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 37,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 38,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 39,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    },
+    {
+      "id": 40,
+      "title": "",
+      "description": "",
+      "year": null,
+      "authorId": null,
+      "published": false,
+      "registrationDate": "2025-05-01T19:41:25.239Z"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Gabriel García Márquez",
+      "gender": "Male"
+    },
+    {
+      "id": 2,
+      "name": "Isabel Allende",
+      "gender": "Female"
+    },
+    {
+      "id": 3,
+      "name": "Jorge Luis Borges",
+      "gender": "Male"
+    },
+    {
+      "id": 4,
+      "name": "Laura Esquivel",
+      "gender": "Female"
+    },
+    {
+      "id": 5,
+      "name": "Mario Vargas Llosa",
+      "gender": "Male"
+    }
+  ]
+}

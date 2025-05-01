@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {authors, books} from '../../data/data';
+import {Component, OnInit} from '@angular/core';
+import {BookService} from '../../services/book.service';
 
 @Component({
   selector: 'app-pie-chart-genre',
@@ -7,18 +7,29 @@ import {authors, books} from '../../data/data';
   styleUrls: ['./pie-chart-genre.component.scss']
 })
 export class PieChartGenreComponent implements OnInit {
-  books = authors;
+  books = [];
   pieChartOptionsGenre: any;
 
-  ngOnInit(): void {
-    this.pieChartOptionsGenre = this.getPieChartOptionsGenre();
+  constructor(
+    private bookService: BookService,
+  ) {
   }
 
+  ngOnInit(): void {
+    this.loadBooks();
+  }
+
+  loadBooks(): void {
+    this.bookService.getBooks().subscribe(data => {
+      this.books = data;
+      this.pieChartOptionsGenre = this.getPieChartOptionsGenre();
+    });
+  }
   getPieChartOptionsGenre() {
     const male = this.books.filter(b => b.gender === 'Male').length;
     const female = this.books.filter(b => b.gender === 'Female').length;
     return {
-      title: { text: 'Genero Autores' },
+      title: {text: 'Genero Autores'},
 
       tooltip: {
         trigger: 'item'
@@ -47,24 +58,12 @@ export class PieChartGenreComponent implements OnInit {
             show: true // Muestra la línea que conecta la etiqueta con la sección
           },
           data: [
-            { value: male, name: 'Hombres', itemStyle: { color: '#4caf50' } }, // Color verde para publicados
-            { value: female, name: 'Mujeres', itemStyle: { color: '#f44336' } } // Color rojo para no publicados
+            {value: male, name: 'Hombres', itemStyle: {color: '#4caf50'}}, // Color verde para publicados
+            {value: female, name: 'Mujeres', itemStyle: {color: '#f44336'}} // Color rojo para no publicados
           ]
         }
       ]
     };
   }
 
-  getBooksByGenre() {
-    const genreCount = {};
-    this.books.forEach(book => {
-      const genre = book.gender;
-      if (genreCount[genre]) {
-        genreCount[genre]++;
-      } else {
-        genreCount[genre] = 1;
-      }
-    });
-    return genreCount;
-  }
 }

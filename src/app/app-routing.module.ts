@@ -12,10 +12,10 @@ const routes: Routes = [
     path: 'dashboard',
      component: DashboardComponent,
   },  {
-    path: 'books',
+    path: 'book',
      component: BookComponent,
   }, {
-    path: 'authors',
+    path: 'author',
     component: AuthorsComponent,
   },
   // { path: 'error', component: ErrorComponent },

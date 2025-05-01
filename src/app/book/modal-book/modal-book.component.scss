@@ -1,0 +1,20 @@
+.add-book-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-book-container form {
+  width: 100%;
+  max-width: 600px;
+}
+.custom-modal .mat-dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: auto;
+  max-width: 600px;
+  margin: auto;
+}

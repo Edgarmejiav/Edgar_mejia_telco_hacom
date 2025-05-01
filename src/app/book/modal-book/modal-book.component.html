@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Agregar Nuevo Libro</h2>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <mat-form-field  class="w-100">
+      <mat-label>Título</mat-label>
+      <input matInput [(ngModel)]="newBook.title" name="title" required>
+    </mat-form-field>
+
+  <mat-form-field  class="w-100">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput [(ngModel)]="newBook.description" name="description" required ></textarea>
+  </mat-form-field>
+
+
+  <div class="row">
+    <div class="col-8">
+      <mat-form-field  class="w-100">
+        <mat-label>Autor</mat-label>
+        <mat-select [(ngModel)]="newBook.authorId" name="authorId" required>
+          <mat-option *ngFor="let author of authors" [value]="author.id">
+            {{ author.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>    </div>
+
+    <div class="col-4">
+      <button mat-flat-button color="primary" >Nuevo autor</button>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-4">
+      <mat-checkbox [(ngModel)]="newBook.published" name="published">Publicado</mat-checkbox>
+    </div>
+
+    <div class="col-8">
+      <mat-form-field  class="w-100">
+        <mat-label>Año de Publicación</mat-label>
+        <input matInput type="number" [(ngModel)]="newBook.year" name="year" required>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <button mat-flat-button color="primary" type="submit" >Agregar Libro</button>
+  </form>

@@ -1,1 +1,70 @@
-<p>book works!</p>
+<div class="container mt-4">
+  <div class="mb-3 d-flex align-items-center gap-4">
+    <label for="search" class="form-label mr-3">Buscar</label>
+    <input id="search" class="form-control mr-3" (keyup)="applyFilter($event)" placeholder="Buscar por título o descripción">
+    <button class="btn btn-info ms-auto" (click)="openDialog()">Nuevo</button>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="table table-bordered table-striped w-100">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Título </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Descripción </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef> Año </th>
+      <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="author">
+      <th mat-header-cell *matHeaderCellDef> Autor</th>
+      <td mat-cell *matCellDef="let element"> {{element.author?.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="published">
+      <th mat-header-cell *matHeaderCellDef> Publicado </th>
+      <td mat-cell *matCellDef="let element"> {{element.published ? 'Sí' : 'No'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="registrationDate">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Registro </th>
+      <td mat-cell *matCellDef="let element"> {{element.registrationDate | date: 'short'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element">
+        <button class="btn btn-sm btn-link" >
+          <i class="fas fa-edit"></i>
+        </button>
+
+        <button (click)="deleteBook(element)" class="btn btn-sm btn-link" >
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+    <mat-paginator
+      [length]="totalItems"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10, 20]"
+      (page)="onPaginateChange($event)">
+    </mat-paginator>
+
+
+
+</div>

@@ -1,10 +1,11 @@
 export class Book {
-  id: number;
+  id: string;
   title: string;
   description: string;
   year: number;
+  author: Author;
   authorId: number;
-  isPublished: boolean;
+  published: boolean;
   registrationDate: Date;
 }
 

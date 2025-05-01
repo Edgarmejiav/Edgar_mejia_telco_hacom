@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {books} from '../../data/data';
+import {Component, OnInit} from '@angular/core';
+
+
+import {BookService} from '../../services/book.service';
 
 @Component({
   selector: 'app-bars',
@@ -7,23 +9,33 @@ import {books} from '../../data/data';
   styleUrls: ['./bars.component.scss']
 })
 export class BarsComponent implements OnInit {
-  books = books;
+  books = [];
   barChartOptions: any;
 
+  constructor(private bookService: BookService) {
+  }
+
   ngOnInit(): void {
-    this.barChartOptions = this.getBarChartOptions();
+    this.loadBooks();
+  }
+
+  loadBooks(): void {
+    this.bookService.getBooks().subscribe(data => {
+      this.books = data;
+      this.barChartOptions = this.getBarChartOptions();
+    });
   }
 
   getBarChartOptions() {
     const booksByYear = this.getBooksByYear();
     return {
-      title: { text: 'Libros por Año' },
+      title: {text: 'Libros por Año'},
       tooltip: {},
       xAxis: {
         type: 'category',
         data: Object.keys(booksByYear)
       },
-      yAxis: { type: 'value' },
+      yAxis: {type: 'value'},
       series: [{
         name: 'Cantidad',
         type: 'bar',

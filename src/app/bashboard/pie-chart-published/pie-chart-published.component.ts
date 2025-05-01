@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {books} from '../../data/data';
+import {Component, OnInit} from '@angular/core';
+import {BookService} from '../../services/book.service';
 
 @Component({
   selector: 'app-pie-chart-published',
@@ -7,19 +7,33 @@ import {books} from '../../data/data';
   styleUrls: ['./pie-chart-published.component.scss']
 })
 export class PieChartPublishedComponent implements OnInit {
-  books = books;
+  books = [];
   pieChartOptionsPublished: any;
 
-  ngOnInit(): void {
-    this.pieChartOptionsPublished = this.getPieChartOptionsPublished();
+
+  constructor(
+    private bookService: BookService,
+  ) {
   }
+
+  ngOnInit(): void {
+    this.loadBooks();
+  }
+
+  loadBooks(): void {
+    this.bookService.getBooks().subscribe(data => {
+      this.books = data;
+      this.pieChartOptionsPublished = this.getPieChartOptionsPublished();
+    });
+  }
+
 
   getPieChartOptionsPublished() {
     const published = this.books.filter(b => b.published).length;
     const notPublished = this.books.filter(b => !b.published).length;
 
     return {
-      title: { text: 'Publicaciones' },
+      title: {text: 'Publicaciones'},
 
       tooltip: {
         trigger: 'item'
@@ -48,8 +62,8 @@ export class PieChartPublishedComponent implements OnInit {
             show: true // Muestra la línea que conecta la etiqueta con la sección
           },
           data: [
-            { value: published, name: 'Publicados', itemStyle: { color: '#4caf50' } }, // Color verde para publicados
-            { value: notPublished, name: 'No Publicados', itemStyle: { color: '#f44336' } } // Color rojo para no publicados
+            {value: published, name: 'Publicados', itemStyle: {color: '#4caf50'}}, // Color verde para publicados
+            {value: notPublished, name: 'No Publicados', itemStyle: {color: '#f44336'}} // Color rojo para no publicados
           ]
         }
       ]
