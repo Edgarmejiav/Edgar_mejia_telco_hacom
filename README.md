@@ -7,12 +7,14 @@ Este proyecto consiste en una aplicación frontend desarrollada con Angular 11, 
 ## Tecnologías Usadas
 
 ### Frontend:
+
 - **Angular 11**: Framework principal para la aplicación.
 - **Bootstrap**: Para diseño responsivo y componentes básicos.
 - **Angular Material**: Para componentes UI adicionales como botones, menús, etc.
 - **Apache Echarts**: Para la visualización de gráficos dinámicos.
 
 ### Backend (Opcional):
+
 - **json-server**: Se utilizó para pruebas y simulación de datos, reemplazando un backend con Spring Boot WebFlux.
 
 > Nota: La implementación de un backend con Spring Boot WebFlux es opcional y no se implementó en esta versión.
@@ -20,40 +22,55 @@ Este proyecto consiste en una aplicación frontend desarrollada con Angular 11, 
 ## Requerimientos
 
 1. **Backend con Spring Boot WebFlux (Opcional)**:
-  - Desarrollar un Web Service usando **Spring Boot WebFlux** en Java para alimentar la información de la web.
+
+- Desarrollar un Web Service usando **Spring Boot WebFlux** en Java para alimentar la información de la web.
 
 2. **Página Principal y CRUD de Libros**:
-  - Se manejan las siguientes entidades:
-    - **Libro**: ID, título, descripción, año, id autor, publicado, Fecha Registro.
-    - **Autor**: ID, Nombre, Género.
-  - La aplicación permite realizar operaciones CRUD para gestionar los libros y autores.
+
+- Se manejan las siguientes entidades:
+  - **Libro**: ID, título, descripción, año, id autor, publicado, Fecha Registro.
+  - **Autor**: ID, Nombre, Género.
+- La aplicación permite realizar operaciones CRUD para gestionar los libros y autores.
 
 3. **Dashboard**:
-  - Resumen de los libros relacionados con el CRUD.
-  - Incluir los siguientes gráficos:
-    - Gráfico de barras de libros por año.
-    - Gráfico de Pie para mostrar libros publicados y no publicados.
-    - Gráfico de Pie que muestra la distribución de géneros de los autores.
-  - Simulación de registros de 4,000 a 12,000 registros cada 5 segundos.
-  - La simulación elimina información de más de 2 horas.
+
+- Resumen de los libros relacionados con el CRUD.
+- Incluir los siguientes gráficos:
+  - Gráfico de barras de libros por año.
+  - Gráfico de Pie para mostrar libros publicados y no publicados.
+  - Gráfico de Pie que muestra la distribución de géneros de los autores.
+- Simulación de registros de 4,000 a 12,000 registros cada 5 segundos.
+- La simulación elimina información de más de 2 horas.
 
 4. **Características adicionales**:
-  - Mantener la información de sesión y la ruta al presionar F5.
-  - Utilizar directivas para gráficos con URL incorrecta y fechas con formato incorrecto.
-  - Manejar errores HTTP y mostrar mensajes de error globalmente.
+
+- Mantener la información de sesión y la ruta al presionar F5.
+- Utilizar directivas para gráficos con URL incorrecta y fechas con formato incorrecto.
+- Manejar errores HTTP y mostrar mensajes de error globalmente.
 
 5. **Repositorio en GitHub**:
-  - Subir la aplicación a un repositorio público en GitHub.
-  - Compartir el enlace al correo: **alan.honorio@selectum.pe**.
+
+- Subir la aplicación a un repositorio público en GitHub.
+- Compartir el enlace al correo: **alan.honorio@selectum.pe**.
 
 ## Instalación
 
 ### Requisitos Previos
+
 1. **Node.js (14.x o superior)**: Se recomienda usar Node.js 14.x para asegurar la máxima compatibilidad con Angular 11.
 2. **Angular CLI**: Necesitarás Angular CLI para desarrollar y servir el proyecto.
 
+## Pasos para ejecutar el proyecto
 
-### Pasos para ejecutar el proyecto
+Recomendado usar Docker para ejecutar el proyecto.
+
+```bash
+docker-compose up --build
+   ```
+
+http://localhost:4200/
+
+### Pasos para ejecutar el localmente
 
 1. **Instalar las dependencias**:
 
@@ -92,5 +109,6 @@ Este proyecto consiste en una aplicación frontend desarrollada con Angular 11, 
    ```
 
    Esto ejecutará tanto el frontend como el backend usando **concurrently**.
+
 ```
 
