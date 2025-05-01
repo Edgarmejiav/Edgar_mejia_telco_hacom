@@ -80,7 +80,9 @@ export class ModalBookComponent implements OnInit {
   }
 
   updateBook(form: NgForm) {
-    this.bookService.updateBook(this.newBook.id, this.newBook).subscribe((response) => {
+    this.bookService.updateBook(this.newBook.id, {
+      ...this.newBook, registrationDate: new Date().toISOString()
+    }).subscribe((response) => {
       if (response) {
         this.dialogRef.close();
         form.reset();

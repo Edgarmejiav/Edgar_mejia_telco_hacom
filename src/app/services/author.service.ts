@@ -14,7 +14,14 @@ export class AuthorService {
   getAuthors(): Observable<any[]> {
     return this.http.get<any[]>(this.url);
   }
+  getAuthorsWithPagination(pageIndex: number, pageSize: number): Observable<any> {
+    const start = pageIndex * pageSize;
+    const limit = pageSize;
 
+    return this.http.get<any>(`${this.url}?_start=${start}&_limit=${limit}`, {
+      observe: 'response'  // Necesitamos acceder a los encabezados
+    });
+  }
   // Get a specific author by id
   getAuthor(id: number): Observable<any> {
     return this.http.get<any>(`${this.url}/${id}`);

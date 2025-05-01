@@ -25,6 +25,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
+import { ModalAuthorComponent } from './author/modal-author/modal-author.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatButtonModule} from "@angular/material/button";
     LinesComponent,
     PieChartPublishedComponent,
     PieChartGenreComponent,
-    ModalBookComponent
+    ModalBookComponent,
+    ModalAuthorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>{{ data?.author ? 'Editar Autor' : 'Agregar Nuevo Autor' }}</h2>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <mat-form-field class="w-100">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="newAuthor.name" name="name" required>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <mat-label>Género</mat-label>
+    <mat-select [(ngModel)]="newAuthor.gender" name="gender" required>
+      <mat-option value="Male">Masculino</mat-option>
+      <mat-option value="Female">Femenino</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+  <button mat-flat-button color="primary" type="submit">
+    {{ data?.author ? 'Actualizar Autor' : 'Agregar Autor' }}
+  </button>
+</form>
