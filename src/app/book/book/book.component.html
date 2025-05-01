@@ -37,8 +37,11 @@
 
     <ng-container matColumnDef="registrationDate">
       <th mat-header-cell *matHeaderCellDef> Fecha de Registro </th>
-      <td mat-cell *matCellDef="let element"> {{element.registrationDate | date: 'short'}} </td>
+      <td mat-cell *matCellDef="let element">
+        <span [appValidateDate]="element.registrationDate"></span>
+      </td>
     </ng-container>
+
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element">
