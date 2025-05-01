@@ -11,10 +11,8 @@ export class LinesComponent implements OnInit, OnDestroy {
   intervalId: any;
 
   ngOnInit(): void {
-    // Genera un registro inicial inmediatamente
     this.simulateInitialData();
 
-    // Luego comienza el intervalo de simulación
     this.simulateData();
   }
   simulateInitialData() {
@@ -23,7 +21,6 @@ export class LinesComponent implements OnInit, OnDestroy {
     const value = Math.floor(Math.random() * (12000 - 4000 + 1)) + 4000;
     this.data.push({ time: now, value });
 
-    // Llama a la actualización del gráfico con el valor inicial
     this.updateChart();
   }
 
@@ -55,7 +52,6 @@ export class LinesComponent implements OnInit, OnDestroy {
 
 
   updateChart() {
-    // Calcular el total de registros
     const totalRegistros = this.data.reduce((total, current) => total + current.value, 0);
 
     this.lineChartOptions = {

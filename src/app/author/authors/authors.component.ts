@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Author} from "../../model/Book.model";
-import {MatTableDataSource} from "@angular/material/table";
-import {MatDialog} from "@angular/material/dialog";
-import {AuthorService} from "../../services/author.service";
-import {PageEvent} from "@angular/material/paginator";
-import {ModalAuthorComponent} from "../modal-author/modal-author.component";
+import {Author} from '../../model/Book.model';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog} from '@angular/material/dialog';
+import {AuthorService} from '../../services/author.service';
+import {PageEvent} from '@angular/material/paginator';
+import {ModalAuthorComponent} from '../modal-author/modal-author.component';
 
 @Component({
   selector: 'app-authors',
