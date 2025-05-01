@@ -29,6 +29,7 @@ import {ModalAuthorComponent} from './author/modal-author/modal-author.component
 import {ValidateDateDirective} from './directives/validate-date.directive';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {HttpErrorInterceptor} from './interceptor/http-error.interceptor';
+import { ImgFallbackDirective } from './directives/img-fallback.directive';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {HttpErrorInterceptor} from './interceptor/http-error.interceptor';
     ModalBookComponent,
     ModalAuthorComponent,
     ValidateDateDirective,
+    ImgFallbackDirective  ,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,7 @@ import {HttpErrorInterceptor} from './interceptor/http-error.interceptor';
     MatCheckboxModule,
     HttpClientModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [
     {
