@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run start:ng && npm run start:api",
+    "start": "concurrently \"npm run start:ng\" \"npm run start:api\"",
     "start:ng": "ng serve --host 0.0.0.0",
     "start:api": "json-server --watch src/db/db.json --host 0.0.0.0",
     "build": "ng build",
