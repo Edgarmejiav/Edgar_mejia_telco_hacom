@@ -2,8 +2,9 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {BookService} from '../../services/book.service';
 import {AuthorService} from '../../services/author.service';
 import {NgForm} from '@angular/forms';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {Book} from '../../model/Book.model';
+import {ModalAuthorComponent} from "../../author/modal-author/modal-author.component";
 
 @Component({
   selector: 'app-modal-book',
@@ -14,6 +15,7 @@ export class ModalBookComponent implements OnInit {
 
   constructor(private bookService: BookService,
               private authorService: AuthorService,
+              public dialog: MatDialog,
               private dialogRef: MatDialogRef<ModalBookComponent>,
               @Inject(MAT_DIALOG_DATA) public data: {
                 book: Book | null,
@@ -90,5 +92,15 @@ export class ModalBookComponent implements OnInit {
     }, (error) => {
       console.error('Error al actualizar el libro:', error);
     });
+  }
+
+  openModalAuthor() {
+    const dialogRef = this.dialog.open(ModalAuthorComponent, {
+      width: '500px',
+      height: 'auto',
+      panelClass: 'custom-modal',
+      data:  undefined
+    });
+    dialogRef.afterClosed().subscribe(() => this.getAuthors());
   }
 }
